@@ -9,8 +9,13 @@
   float: right;
 }
 
+.input-box {
+  position: absolute;
+  bottom:50px;
+}
+
 .list {
-  margin-top: 10%;
+  margin-top: 25px;
 }
 .length{
   width: 100% !important
@@ -76,4 +81,8 @@ p {
 /* Style the right image */
 p.right {
   float: right;
+}
+
+.list-box {
+  padding-left: 0px;
 }
