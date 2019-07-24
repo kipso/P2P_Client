@@ -9,19 +9,18 @@ angular.module('myApp.users', ['ngRoute'])
 
 .controller('UsersCtrl', ['$scope','$location', '$http', 'HostService' ,function($scope, $location, $http, HostService) {
     var token = localStorage.getItem('token');
-    
-    var connection = new WebSocket("ws://localhost:3000/"+token);
-    connection.onopen = function (e){
-      connection.send('ping');
-    };
-    connection.addEventListener('message', function (m) { 
-        console.log(m.data); 
-    });
-
-    connection.onerror = function(err){
-      console.log("Socket Error ",err);
+    $scope.closeConn = function(){
+        localStorage.clear();
+        $http.delete(HostService.api + "logout")
+        .then(function successCallBack(response){
+            localStorage.clear();
+            $location.path('/login').replace();
+        }, function errorCallBack(response){
+            $scope.isNone = true;
+            $scope.isError = true;
+            $scope.errorMessage = 'Somethings wrong happened. Please try later'
+        })
     }
-    
     function setUserDetails() {
         $scope.isNone = false;
         $scope.isError = false;
@@ -42,7 +41,7 @@ angular.module('myApp.users', ['ngRoute'])
         })
     }
     if(token == undefined)
-        $location.path('/#/login').replace();
+        $location.path('/login').replace();
     else {
         $http.defaults.headers.common.Authorization = token;
         setUserDetails();

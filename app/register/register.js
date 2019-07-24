@@ -7,7 +7,7 @@ angular.module('myApp.register', ['ngRoute'])
     controller: 'RegisterCtrl'
   });
 }])
-// "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjcsImlhdCI6MTU2MzcwMTI4MCwiZXhwIjoxNTYzNzQ0NDgwfQ.jHlzJDsoluIsVY2EplJCGr9A3URKjCCKUfYtX08d4Ng"
+
 .controller('RegisterCtrl', ['$scope', '$http', '$location', 'HostService', function($scope, $http, $location, HostService) {
     $scope.isFormError = false;
 

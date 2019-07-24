@@ -1,12 +1,12 @@
 <div class="container col">
-    <div class="float-right">
-        <a href="/logout" ng-click="closeConn()" class="btn btn-outline-dark" role="button">Logout</a>
+    <div class="container float-right">
+        <a ng-click="closeConn()" class="btn btn-outline-dark" role="button">Logout</a>
     </div>
     <div class="alert alert-warning" role="alert" ng-if="isNone">
             No other users have been registered"
     </div>
     <div class="alert alert-danger" role="alert" ng-if="isError" ng-bind="errorMessage"></div>
-    <div class="container" ng-if="!isNone">
+    <div class="container list" ng-if="!isNone">
         <ul class="list-groups align-middle">
             <li ng-repeat="user in users" class="list-group-item">
                 <div class="d-flex w-100 justify-content-between">

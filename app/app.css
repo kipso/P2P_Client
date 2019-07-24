@@ -5,8 +5,13 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  width:60%;
+  float: right;
 }
 
+.list {
+  margin-top: 10%;
+}
 .length{
   width: 100% !important
 }
@@ -15,6 +20,7 @@
 .darker {
   border-color: #ccc;
   background-color: #ddd;
+  float: left;
 }
 
 /* Clear floats */
@@ -58,4 +64,16 @@
   font-size: 15px;
   min-height: 48px;
   width: 100%;
+}
+
+
+/* Style images */
+p {
+  float: left;
+  width: 100%;
+}
+
+/* Style the right image */
+p.right {
+  float: right;
 }
